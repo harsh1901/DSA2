@@ -1,0 +1,44 @@
+
+// ASSN04 : ASCENDING & DESCENDING
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pic18f4550.h>
+
+void ascend();
+void descend();
+void main(void){
+    int choice;
+    choice = 1;
+    if(choice == 1){
+        ascend();
+    }
+    else{
+        descend();
+    }
+}
+
+void ascend(){
+    int i,j,temp;
+    int num_asc[] = {10,2,5,1,6};
+    for(i=0;i<=4;i++){
+        for(j=i+1;j<=4;j++)
+            if(num_asc[i] > num_asc[j])
+                temp = num_asc[i];
+                num_asc[i] = num_asc[j];
+                num_asc[j] = temp;
+    }
+}
+
+void descend(){
+    int i,j,temp;
+    int num_asc[] = {10,2,5,1,6};
+    for(i=0;i<=4;i++){
+        for(j=i+1;j<=4;j++)
+            if(num_asc[i] < num_asc[j])
+                temp = num_asc[i];
+                num_asc[i] = num_asc[j];
+                num_asc[j] = temp;
+    }
+}
+
